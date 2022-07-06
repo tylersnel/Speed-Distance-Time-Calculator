@@ -8,21 +8,30 @@
 <body>
     <h1>Speed -  Time - Distance</h1>
     <p>Calculate the distance you traveled</p>
-    <div class="topnav"><a href="/">Home</a> - <a href="/distance">Calculate Distance</a></div>
+    <div class="topnav"><a href="/">Login Page</a> - <a href="/distance">Calculate Distance</a></div>
 
     <form id= "getSpeed" action="/distance" method="POST">
     <label for="speed"> Enter Speed: </label>
-    <input type=number id="speed" name="speed" required>
+    <input type=number id="speed" name="speed" min="1" placeholder="Enter Number" required>
     
     <label for="time"> Enter Time: </label>
-    <input type=text id="time" name="time" placeholder="hh:mm:ss" pattern= "[0-9]{1}[0-9]{1}:[0-9]{1}[0-9]{1}:[0-9]{1}[0-9]{1}" required>
+    <input type=text id="time" name="time" placeholder="HH:MM:SS" pattern= "[0-9]{1}[0-9]{1}:[0-9]{1}[0-9]{1}:[0-9]{1}[0-9]{1}" required>
     
     <input type="submit" value="Submit" name="userInput">
     <a href='/distance'><input class="btn" type="button" value="Cancel"></a>
     </form>
 
-</body>
-</html>
+    {% if data %}
+        <h2> Your distance traveled is: {{data}}</h2>
+    {% endif %}
+    
+    <div>
+    <h3>What is new</h3>
+    <p>New Feature!</p>
+    <p>New Feature!</p>
+    <p>Click <a href="/">Here</a> For Advanced Details (right now just takes you home)</p>
+
+    </div>
 
 </body>
 </html>

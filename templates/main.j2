@@ -3,14 +3,27 @@
 
 <html>
 <head>
-    <title>Home Page</title>
+    <title>Login Page</title>
 </head>
 <body>
     <h1>Speed -  Time - Distance</h1>
     <p>Calculate your speed, time or distance!</p>
-    <div class="topnav"><a href="/">Home</a> - <a href="/distance">Calculate Distance</a></div>
-</body>
-</html>
+
+    <form id= "login" action="/distance" method="POST">
+    <label for="username"> Username: </label>
+    <input type=text id="username" name="username" required>
+    
+    <label for="password"> Password: </label>
+    <input type=text id="password" name="password"  required>
+    
+    <input type="submit" value="Submit" name="userLogin">
+    <a href='/'><input class="btn" type="button" value="Cancel"></a>
+    </form>
+
+    <div>
+    <h3>New User? Click <a href="/">Here</a> To Create A Profile (currently just takes you to login page)</h3>
+
+    </div>
 
 </body>
 </html>

@@ -32,7 +32,7 @@ def distance():
             time=round(time , 3)
 
             data=int(speed)*time
-            return render_template("distancecalc.j2", data=data)
+            return render_template("distance.j2", data=data)
     return render_template("distance.j2")
 # Listener
 
