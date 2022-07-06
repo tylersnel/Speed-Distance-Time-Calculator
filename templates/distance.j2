@@ -15,9 +15,10 @@
     <input type=number id="speed" name="speed" required>
     
     <label for="time"> Enter Time: </label>
-    <input type=time id="time" name="time" step ="1" required>
+    <input type=text id="time" name="time" placeholder="hh:mm:ss" pattern= "[0-9]{1}[0-9]{1}:[0-9]{1}[0-9]{1}:[0-9]{1}[0-9]{1}" required>
     
     <input type="submit" value="Submit" name="userInput">
+    <a href='/distance'><input class="btn" type="button" value="Cancel"></a>
     </form>
 
 </body>

@@ -17,9 +17,22 @@ def distance():
     if request.method=="POST":
         if request.form.get ('userInput'):
             speed=request.form['speed']
-            time=request.form['time']  
-            #data=int(speed)*int(time)
-            #return render_template("distancecalc.j2", data=data)
+            time=request.form['time']
+
+            #convert time that is a string to integers
+            hh=time[0]+time[1] 
+            hh=int(hh)
+            mm=time[3]+time[4]
+            mm=int(mm)
+            ss=time[6]+time[7]
+            ss=int(ss)
+
+            #convert to decimal for calculation
+            time=hh+(mm/60)+(ss/3600)
+            time=round(time , 3)
+
+            data=int(speed)*time
+            return render_template("distancecalc.j2", data=data)
     return render_template("distance.j2")
 # Listener
 
