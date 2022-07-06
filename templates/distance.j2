@@ -1,0 +1,27 @@
+<!-- Our CSS -->
+<link href="{{url_for('static', filename='app.css')}}" rel="stylesheet">
+
+<html>
+<head>
+    <title>Distance</title>
+</head>
+<body>
+    <h1>Speed -  Time - Distance</h1>
+    <p>Calculate the distance you traveled</p>
+    <div class="topnav"><a href="/">Home</a> - <a href="/distance">Calculate Distance</a></div>
+
+    <form id= "getSpeed" action="/distance" method="POST">
+    <label for="speed"> Enter Speed: </label>
+    <input type=number id="speed" name="speed" required>
+    
+    <label for="time"> Enter Time: </label>
+    <input type=time id="time" name="time" step ="1" required>
+    
+    <input type="submit" value="Submit" name="userInput">
+    </form>
+
+</body>
+</html>
+
+</body>
+</html>
