@@ -18,6 +18,13 @@ def distance():
         if request.form.get ('userInput'):
             speed=request.form['speed']
             time=request.form['time']
+            unit=request.form['unit']
+
+            if unit=="km":
+                measure="kilometers"
+            else:
+                measure="miles"
+            
 
             #convert time that is a string to integers
             hh=time[0]+time[1] 
@@ -29,10 +36,10 @@ def distance():
 
             #convert to decimal for calculation
             time=hh+(mm/60)+(ss/3600)
-            time=round(time , 3)
+            
 
-            data=int(speed)*time
-            return render_template("distance.j2", data=data)
+            data=round(int(speed)*time, 3)
+            return render_template("distance.j2", data=data, measure=measure)
     return render_template("distance.j2")
 # Listener
 
