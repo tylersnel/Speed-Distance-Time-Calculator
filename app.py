@@ -41,6 +41,10 @@ def distance():
             data=round(int(speed)*time, 3)
             return render_template("distance.j2", data=data, measure=measure)
     return render_template("distance.j2")
+
+@app.route('/advanced')
+def advanced():
+    return render_template("advanced.j2")
 # Listener
 
 if __name__ == "__main__":
