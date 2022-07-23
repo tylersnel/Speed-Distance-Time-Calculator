@@ -3,14 +3,25 @@
 
 <html>
 <head>
-    <title>Distance</title>
+    <title>Time</title>
 </head>
 <body>
     <h1>Speed -  Time - Distance</h1>
     <p>Calculate the distance you traveled</p>
     <div class="topnav"><a href="/">Login Page</a> - <a href="/distance">Calculate Distance</a> - <a href="/speed">Calculate Speed</a> - <a href="/Time">Calculate Time</a></div>
 
-    <form id= "getSpeed" action="/distance" method="POST">
+    <form id= "getDistance" action="/time" method="POST">
+    <label for="distance"> Enter Distance: </label>
+    <input type=number id="distance" name="distance" min="1" placeholder="Enter Number" required>
+
+    
+    <select name = "unit" id="unit" required>
+        <option selected disabled value=''>-Select Unit of Measure-</option>
+        <option value="Kilometers">Kilometers</option>
+        <option value="Miles">Miles</option>
+    </select>
+        
+    <form id= "getSpeed" action="/time" method="POST">
     <label for="speed"> Enter Speed: </label>
     <input type=number id="speed" name="speed" min="1" placeholder="Enter Number" required>
 
@@ -20,16 +31,9 @@
         <option value="km">kph</option>
         <option value="mi">mph</option>
     </select>
-        
-    <label for="time"> Enter Time: </label>
-    <input type=text id="time" name="time" placeholder="HH:MM:SS" pattern= "[0-9]{1}[0-9]{1}:[0-9]{1}[0-9]{1}:[0-9]{1}[0-9]{1}" required>
-    
-    <input type="submit" value="Submit" name="userInput">
-    <a href='/distance'><input class="btn" type="button" value="Clear Inputs"></a>
-    </form>
 
     {% if data %}
-        <h2> Your distance traveled is: {{data}} {{measure}}</h2>
+        <h2> Your time traveled is: {{data}} {{measure}}</h2>
     {% endif %}
     
     <div>
