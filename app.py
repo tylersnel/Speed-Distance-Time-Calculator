@@ -92,14 +92,24 @@ def time():
             minutes=math.trunc(minutes_float)
 
             seconds_holder=minutes_float-minutes
-            seconds_float=seconds_holder*60
+            seconds_float=round(seconds_holder*60)
             seconds=math.trunc(seconds_float)
 
+            hours=str(hours)
+            if len(hours)==1:
+                hours="0"+hours
 
+            minutes=str(minutes)
+            if len(minutes)==1:
+                minutes="0"+minutes
+
+            seconds=str(seconds)
+            if len(seconds)==1:
+                seconds="0"+seconds
             
 
-            data=round(int(distance)/int(speed), 3)
-            return render_template("time.j2", data=data, measure=measure)
+            data= (hours+":"+minutes+":"+seconds)
+            return render_template("time.j2", data=data)
     return render_template("time.j2")
 
 @app.route('/advanced')
