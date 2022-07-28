@@ -170,8 +170,8 @@ def speed():
             
 
             data=round(int(distance)/time, 3)
-            return render_template("speed.j2", data=data, measure=measure)
-    return render_template("speed.j2")
+            return render_template("speed.j2", data=data, measure=measure, speed_img=speed_img)
+    return render_template("speed.j2", speed_img=speed_img)
 
 @app.route('/time', methods=["POST", "GET"])
 def time():
@@ -209,8 +209,8 @@ def time():
             
 
             data= (hours+":"+minutes+":"+seconds)
-            return render_template("time.j2", data=data)
-    return render_template("time.j2")
+            return render_template("time.j2", data=data, time_img=time_img)
+    return render_template("time.j2", time_img=time_img)
 
 @app.route('/advanced')
 def advanced():

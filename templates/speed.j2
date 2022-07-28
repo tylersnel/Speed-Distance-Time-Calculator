@@ -7,8 +7,12 @@
 </head>
 <body>
     <h1>Speed -  Time - Distance</h1>
-    <p>Calculate the distance you traveled</p>
+    <p>Calculate your speed</p>
     <div class="topnav"><a href="/">Login Page</a> - <a href="/distance">Calculate Distance</a> - <a href="/speed">Calculate Speed</a> - <a href="/time">Calculate Time</a></div>
+
+        {%  if speed_img %}
+        <img src={{speed_img}}>
+        {% endif %}
 
     <form id= "getDistance" action="/speed" method="POST">
     <label for="distance"> Enter Distance: </label>
@@ -39,6 +43,7 @@
     <p>Click <a href="/advanced">Here</a> For Advanced Details (right now just takes you home)</p>
 
     </div>
+<a href="/distance">Previous</a>  <a href="/time">Next</a>
 
 </body>
 </html>
