@@ -10,6 +10,10 @@
     <p>Calculate the distance you traveled</p>
     <div class="topnav"><a href="/">Login Page</a> - <a href="/distance">Calculate Distance</a> - <a href="/speed">Calculate Speed</a> - <a href="/time">Calculate Time</a></div>
 
+        {%  if distance_img %}
+        <img src={{distance_img}}>
+        {% endif %}
+
     <form id= "getSpeed" action="/distance" method="POST">
     <label for="speed"> Enter Speed: </label>
     <input type=number id="speed" name="speed" min="1" placeholder="Enter Number" required>
@@ -28,8 +32,11 @@
     <a href='/distance'><input class="btn" type="button" value="Clear Inputs"></a>
     </form>
 
+
+
     {% if data %}
-        <h2> Your distance traveled is: {{data}} {{measure}}</h2>
+        <h2> Your distance traveled is: {{data}} {{measure}} </h2>
+  
     {% endif %}
     
     <div>

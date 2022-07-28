@@ -1,29 +1,24 @@
-<!-- Our CSS -->
-<link href="{{url_for('static', filename='app.css')}}" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
 
-<html>
 <head>
-    <title>Login Page</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
 </head>
-<body>
-    <h1>Speed -  Time - Distance</h1>
-    <p>Calculate your speed, time or distance!</p>
 
-    <form id= "login" action="/distance" method="POST">
-    <label for="username"> Username: </label>
-    <input type=text id="username" name="username" required>
-    
-    <label for="password"> Password: </label>
-    <input type=text id="password" name="password"  required>
-    
-    <input type="submit" value="Submit" name="userLogin">
-    <a href='/'><input class="btn" type="button" value="Clear Username and Password"></a>
+<body>
+    <h1>Login Page</h1>
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        {{ form.username }}
+        {{ form.password }}
+        {{ form.submit }}
     </form>
 
-    <div>
-    <h3>New User? Click <a href="/">Here</a> To Create A Profile (currently just takes you to login page)</h3>
-
-    </div>
-
+    <a href="/register">Don't have an account? Sign Up</a>
 </body>
+
 </html>
