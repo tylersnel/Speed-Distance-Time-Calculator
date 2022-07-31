@@ -6,13 +6,13 @@
     <title>Distance</title>
 </head>
 <body>
-    <h1>Speed -  Time - Distance</h1>
-    <p>Calculate the distance you traveled</p>
-    <div class="topnav"><a href="/">Login Page</a> - <a href="/distance">Calculate Distance</a> - <a href="/speed">Calculate Speed</a> - <a href="/time">Calculate Time</a></div>
-
         {%  if distance_img %}
         <img src={{distance_img}}>
         {% endif %}
+    <h1>Calculate the distance you traveled</h1>
+    <div class="topnav"><a href="/">Login Page</a> - <a href="/distance">Calculate Distance</a> - <a href="/speed">Calculate Speed</a> - <a href="/time">Calculate Time</a></div>
+
+
 
     <form id= "getSpeed" action="/distance" method="POST">
     <label for="speed"> Enter Speed: </label>
