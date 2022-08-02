@@ -155,7 +155,7 @@ def speed():
                 measure="kph"
             else:
                 measure="mph"
-            
+   
 
             #convert time that is a string to integers
             hh=time[0]+time[1] 

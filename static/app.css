@@ -23,3 +23,18 @@ img {
 h1 {
   text-align: center;
 }
+
+a:hover{
+    color: darkorange;
+    
+}
+
+a.forward{
+    font-size: 300%;
+}
+
+
+a.back{
+    font-size: 300%;
+}
+
